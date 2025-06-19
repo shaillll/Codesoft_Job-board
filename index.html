@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Board Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+  <nav class="navbar">
+    <div class="logo">Job Board Pro</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#jobs">Jobs</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" class="upload-btn">Post Job</a></li>
+      <li><a href="#" onclick="openAuthModal()" class="upload-btn">Login/Register</a></li>
+        
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <img src="hero image.avif" class="hero-image" alt="Hero" />
+    <div class="hero-content">
+      <h1>Unlock Your Career Potential</h1>
+      <p>Find thousands of job opportunities from top companies</p>
+      <button class="upload-btn" onclick="openModal()">Upload Resume</button>
+    </div>
+  </section>
+
+  <section class="counter-section">
+    <div class="counter-box">
+      <h2 id="jobsCount">0</h2>
+      <p>Jobs Listed</p>
+    </div>
+    <div class="counter-box">
+      <h2 id="companiesCount">0</h2>
+      <p>Companies</p>
+    </div>
+    <div class="counter-box">
+      <h2 id="successCount">0</h2>
+      <p>Success Stories</p>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <h2>🌟 Motivation for the Day</h2>
+    <p id="motivational-quote">Dream big. Work hard. Stay focused.</p>
+  </section>
+
+  <section class="hiring-logos">
+    <h2>Companies Hiring Now</h2>
+    <div class="logo-grid">
+      <img src="microsoft.jpg" alt="Microsoft" />
+      <img src="apple.jpg" alt="Apple" />
+      <img src="google.jpg" alt="Google" />
+      <img src="linkdin2.jpg" alt="LinkedIn" />
+    </div>
+  </section>
+
+  <section class="success-gallery" id="stories">
+    <h2>Success Stories</h2>
+    <div class="gallery-track">
+      <img src="sucess1.avif" alt="Success 1" />
+      <img src="sucess2.avif" alt="Success 2" />
+      <img src="sucess3.jpg" alt="Success 3" />
+      <img src="sucess4.jpg" alt="Success 4" />
+      <img src="sucess5.jpg" alt="Success 5" />
+      <img src="hero image3.jpg" alt="Success 6" />
+    </div>
+  </section>
+
+  <!-- Modal for Application -->
+  <div class="modal-overlay" id="modal" style="display:none;">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2>Upload Resume</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="file" accept=".pdf,.doc" />
+        <textarea rows="4" placeholder="Cover Letter (Optional)"></textarea>
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+  <!-- Auth Modal (Login/Register) -->
+<div class="modal-overlay" id="authModal" style="display: none;">
+  <div class="modal auth-modal">
+    <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+    <div class="auth-tabs">
+      <button onclick="switchAuth('login')" id="loginTab" class="active-tab">Login</button>
+      <button onclick="switchAuth('register')" id="registerTab">Register</button>
+    </div>
+    
+    <form id="loginForm" class="auth-form">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <form id="registerForm" class="auth-form" style="display: none;">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
