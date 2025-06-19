@@ -1,0 +1,503 @@
+:root {
+  --primary-color: #2196f3;
+  --accent-color: #00c853;
+  --dark: #333;
+  --light-bg: #fff;
+  --highlight: #0d47a1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+  transition: background 0.5s ease-in-out;
+  color: var(--dark);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeInDown 0.5s ease-out;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffeb3b;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffeb3b;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.upload-btn {
+  background: var(--accent-color);
+  padding: 0.5rem 1.25rem;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background: #009a3d;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Counter Section */
+.counter-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.counter-box h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.counter-box p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Quotes */
+.quote-section {
+  background: #e3f2fd;
+  text-align: center;
+  padding: 2rem;
+}
+
+.quote-section h2 {
+  color: var(--primary-color);
+}
+
+.quote-section p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+/* Companies Hiring */
+.hiring-logos {
+  padding: 4rem 3rem;
+  background: #fff;
+  text-align: center;
+}
+
+.hiring-logos h2 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logo-grid img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Success Gallery */
+.success-gallery {
+  padding: 4rem 2rem;
+  background: #f0f4ff;
+  text-align: center;
+}
+
+.success-gallery h2 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.gallery-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-track img {
+  height: 200px;
+  scroll-snap-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal input, .modal textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal button[type="submit"] {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal button[type="submit"]:hover {
+  background: #1976d2;
+}
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Exciting Job Openings Section */
+.job-openings-section {
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+  box-shadow: inset 0 -4px 10px rgba(0,0,0,0.05);
+  
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  color: var(--highlight);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.section-header h2 span {
+  font-size: 2.2rem;
+  animation: bounce 1s infinite alternate;
+  margin-right: 10px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.job-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.job-card::before {
+  content: "";
+  background: url('https://img.icons8.com/ios-filled/50/job.png') no-repeat center;
+  background-size: 40px;
+  opacity: 0.08;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.job-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+}
+
+.job-card h3 {
+  background: linear-gradient(to right, #0d47a1, #2196f3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2s infinite linear;
+  margin-bottom: 0.5rem;
+}
+
+.job-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.job-card span {
+  display: inline-block;
+  background: #1e88e5;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.job-card button {
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.job-card button:hover {
+  background: #2e7d32;
+}
+
+/* Dark Mode */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: #222;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar,
+.dark-mode .job-card,
+.dark-mode .form-section,
+.dark-mode .counter-box,
+.dark-mode .testimonial,
+.dark-mode .modal,
+.dark-mode .hero-content,
+.dark-mode .hiring-logos,
+.dark-mode .success-gallery,
+.dark-mode .quote-section {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .job-card h3,
+.dark-mode .form-section h2,
+.dark-mode .counter-box h2,
+.dark-mode .testimonials h2,
+.dark-mode .modal h2,
+.dark-mode .quote-section h2 {
+  color: #90caf9;
+}
+
+/* Animations */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  from { background-position: 0%; }
+  to { background-position: 200%; }
+}
+/* Auth Modal */
+.auth-modal {
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.auth-tabs button {
+  flex: 1;
+  padding: 0.75rem;
+  background: #eee;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-tabs .active-tab {
+  background: var(--primary-color);
+  color: white;
+}
+
+.auth-tabs button:not(.active-tab):hover {
+  background: #ddd;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-form button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-form button:hover {
+  background: #009a3d;
+}
+
