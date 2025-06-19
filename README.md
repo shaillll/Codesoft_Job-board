@@ -1,4 +1,4 @@
-# Codesoft_Job-board
+# Codsoft_Job-board
 
 🌐 Job Board Pro
 A modern, responsive, and fully functional Job Board Website built with HTML, CSS, and JavaScript. This project allows employers to post job openings and job seekers to search, apply, and submit resumes seamlessly.
